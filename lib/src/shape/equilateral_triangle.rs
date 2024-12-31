@@ -1,4 +1,4 @@
-use std::ops::{Add, Div, Mul};
+use std::ops::{Add, Div, Mul, Sub};
 use crate::shape::area::Area;
 
 pub struct EquilateralTriangle {
@@ -26,4 +26,15 @@ impl Add for EquilateralTriangle {
             edge_len: self.edge_len + rhs.edge_len,
         }
     }
+}
+
+impl Sub for EquilateralTriangle {
+    type Output = Self;
+
+    fn sub(self, rhs: Self) -> Self::Output {
+        Self {
+            edge_len: self.edge_len - rhs.edge_len,
+        }
+    }
+    
 }
